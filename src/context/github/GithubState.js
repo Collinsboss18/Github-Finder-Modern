@@ -33,7 +33,6 @@ const GithubState = (props) => {
 			const res = await axios.get(
 				`https://api.github.com/search/users?q=${name}&client_id=${githubClientId}&client_secret=${githubClientSecret}`
 			);
-			console.log(res);
 			res.status === 200
 				? dispatch({
 						type: SEARCH_USERS,
@@ -76,7 +75,7 @@ const GithubState = (props) => {
 			);
 			res.status === 200
 				? dispatch({
-						type: GET_USER,
+						type: GET_REPOS,
 						payload: res.data,
 				  })
 				: // if internally there are errors
